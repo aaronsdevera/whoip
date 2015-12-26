@@ -3,6 +3,9 @@ Automated IP geolocation and identification using reverse DNS
 
 ![Example Map](viz/README.png?raw=true "Example Map")
 
+## What it does
+Reveal the identities and locations of the IP addresses that your connection is traveling through. Attach a listfile of IPs, or perform a traceroute on a domain (eg. 'google.com')
+
 ## Usage
 ```
 whoip.py -f <LISTFILE>
