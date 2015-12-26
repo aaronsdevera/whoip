@@ -138,8 +138,8 @@ def genmap(filepath):
             print 'Please open a browser on: ' + filepath
      
 def main(argv):
-    inputfile = ''
-    outputfile = ''
+    if argv == '':
+        doc()
     try:
         opts, args = getopt.getopt(argv,'hf:t:',['ifile=','ofile='])
     except getopt.GetoptError:
@@ -159,9 +159,6 @@ def main(argv):
             tr = trace(arg)
             path = geoloc(tr)
             genmap(path)
-
-            
-
 
 if __name__ == '__main__':
     main(sys.argv[1:])
