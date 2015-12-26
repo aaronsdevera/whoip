@@ -160,4 +160,7 @@ def main(argv):
             genmap(path)
 
 if __name__ == '__main__':
+    if len(sys.argv) == 1:
+        print 'Error: Missing requirement'
+        doc()
     main(sys.argv[1:])
