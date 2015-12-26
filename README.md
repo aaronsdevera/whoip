@@ -9,7 +9,7 @@ whoip reveals the identities and locations of the IP addresses that your connect
 ## Usage
 ```
 whoip.py -f <LISTFILE>
-whoip.py -t <TARGET IP ADDRESS>
+whoip.py -t <TARGET DOMAIN>
 -f, --list-file     :     Upload a list of IPs for processing
 -t, --traceroute    :     Perform traceroute on target IP
 -h, --help          :     Assistance
