@@ -1,10 +1,10 @@
 # whoip
-Automated IP geolocation and identification using reverse DNS
+Automated IP geolocation and identification using reverse DNS and folium.
 
 ![Example Map](viz/README.png?raw=true "Example Map")
 
 ## What it does
-whoip reveals the identities and locations of the IP addresses that your connection is traveling through. Attach a listfile of IPs, or perform a traceroute on a domain (eg. 'google.com').
+whoip reveals the identities and locations of the IP addresses that your connection is traveling through, on a interactive map enabled by [folium](https://github.com/python-visualization/folium). Attach a listfile of IPs, or perform a traceroute on a domain (eg. 'google.com').
 
 ## Usage
 ```
