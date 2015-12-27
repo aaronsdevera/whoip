@@ -84,13 +84,16 @@ def geoloc(kill_list):
 
                     who_nets_name = who_nets[0]['name']
                     who_nets_desc = who_nets[0]['description']
-
                     
-                    popup = 'WHOIS Description: %s ' % who_nets_desc + 'IP: %s' % match.ip + ',' + 'Country: %s' % match.country + ',' + 'Continent: %s' % match.continent + ',' + 'Subvisions: %s' % comma_sep(match.subdivisions) + ',' + 'Timezone: %s' % match.timezone + ',' + 'Location: %s' % comma_sep(match.location)
-
-                    target_long_lat = comma_sep(match.location)
+                    if match == None:
+                        popup = 'WHOIS Description: %s ' % who_nets_desc + 'IP: %s' % each + ',' + 'Country: %s' % 'NULL' + ',' + 'Continent: %s' % 'NULL' + ',' + 'Subvisions: %s' % 'NULL' + ',' + 'Timezone: %s' % 'NULL' + ',' + 'Location: %s' % 'NULL'
+                        map.circle_marker([0,0],radius=900, popup=popup,line_color='#3186cc', fill_color='#3186cc')
+                    else:
+                        popup = 'WHOIS Description: %s ' % who_nets_desc + 'IP: %s' % match.ip + ',' + 'Country: %s' % match.country + ',' + 'Continent: %s' % match.continent + ',' + 'Subvisions: %s' % comma_sep(match.subdivisions) + ',' + 'Timezone: %s' % match.timezone + ',' + 'Location: %s' % comma_sep(match.location)
+                
+                        map.circle_marker(match.location,radius=900, popup=popup,line_color='#3186cc', fill_color='#3186cc')
                     
-                    map.circle_marker(match.location,radius=900, popup=popup,line_color='#3186cc', fill_color='#3186cc')
+                    
     if lists_of_IPs == True:
         for each in kill_list:
             if each[:2] == 10 or each[:2] == str(10):
@@ -110,12 +113,13 @@ def geoloc(kill_list):
                 who_nets_name = who_nets[0]['name']
                 who_nets_desc = who_nets[0]['description']
                 
+                if match == None:
+                    popup = 'WHOIS Description: %s ' % who_nets_desc + 'IP: %s' % each + ',' + 'Country: %s' % 'NULL' + ',' + 'Continent: %s' % 'NULL' + ',' + 'Subvisions: %s' % 'NULL' + ',' + 'Timezone: %s' % 'NULL' + ',' + 'Location: %s' % 'NULL'
+                    map.circle_marker([0,0],radius=900, popup=popup,line_color='#3186cc', fill_color='#3186cc')
+                else:
+                    popup = 'WHOIS Description: %s ' % who_nets_desc + 'IP: %s' % match.ip + ',' + 'Country: %s' % match.country + ',' + 'Continent: %s' % match.continent + ',' + 'Subvisions: %s' % comma_sep(match.subdivisions) + ',' + 'Timezone: %s' % match.timezone + ',' + 'Location: %s' % comma_sep(match.location)
                 
-                popup = 'WHOIS Description: %s ' % who_nets_desc + 'IP: %s' % match.ip + ',' + 'Country: %s' % match.country + ',' + 'Continent: %s' % match.continent + ',' + 'Subvisions: %s' % comma_sep(match.subdivisions) + ',' + 'Timezone: %s' % match.timezone + ',' + 'Location: %s' % comma_sep(match.location)
-                
-                target_long_lat = comma_sep(match.location)
-                
-                map.circle_marker(match.location,radius=900, popup=popup,line_color='#3186cc', fill_color='#3186cc')
+                    map.circle_marker(match.location,radius=900, popup=popup,line_color='#3186cc', fill_color='#3186cc')
     
         
     ts = time.time()
