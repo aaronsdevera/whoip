@@ -22,8 +22,8 @@ def doc():
     print '-f, --list-file     :     Upload a list of IPs for processing'
     print '-t, --traceroute    :     Perform traceroute on target IP'
     print '-h, --help          :     Assistance'
-    print 'Project Contact:
-    print 'aaronsdevera [at] protonmail [dot] com
+    print 'Project Contact:'
+    print 'aaronsdevera [at] protonmail [dot] com'
     print '@aaronsdevera'
 
 def makelist(path):
